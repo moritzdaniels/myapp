@@ -1,0 +1,78 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*general*/
+
+h1 {
+	font-family: Arial;
+	font-size: 6em;
+	text-align: center;
+	color: #1b1b1b;
+	margin-top: 1em;
+}
+
+h2 {
+	text-align: center;
+	color: #1b1b1b;
+	margin-bottom: 1em;
+}
+
+/*navigation*/
+
+.navbar-brand {
+	margin: 0;
+	height: 100%;
+	padding: 0.2em;
+}
+
+.my-image {
+	display: block;
+	margin: auto;
+	vertical-align: middle;
+}
+
+/*footer*/
+
+.foot ul li {
+	display: inline;
+	font-size: 1em;	
+}
+
+.foot-text {
+	float: left;
+	margin: 0;
+	padding-left: 0;
+}
+
+.foot a {
+	color: white;
+	float: left;
+	padding-right: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+footer {
+	background-color: #1b1b1b;
+	position: absolute;
+	clear: both;
+	width: 100%;
+	left: 0;
+	right: 0;
+	font-family: Arial, Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+	text-decoration: none;
+	margin-bottom: -10px;
+}
+.line-separator {
+	height:1px;
+	background:#717171;
+	clear: both;
+}
+
+/* Product */
+
+table {
+	border: 1px solid black;
+	margin-top: 1em;
+}

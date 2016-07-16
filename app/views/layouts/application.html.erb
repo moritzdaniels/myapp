@@ -1,14 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Myapp</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <title>Nameofapp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>  
   </head>
-
   <body>
+  <div id="wrap">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <%= image_tag("logo_md.png", class:"img-responsive logo-image", alt: "Brand") %>
+      </a>
+    </div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#about">About<span class="sr-only">(current)</span></a></li>
+        <li><a href="#contact">Contact</a></li>        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produkte<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Produkt 1</a></li>
+            <li><a href="#">Produkt 2</a></li>
+            <li><a href="#">Produkt 3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+     
     <%= yield %>
+  <footer>
+  <div class="navbar-inverse navbar-fixed-bottom">
+        <div class="container foot">
+          <div>
+            <ul class="foot-text">
+              <li><a href="#carousel-example-generic"><span>BACK TO TOP</span></a></li>
+              <li><a href="mailto:moritzdaniels@gmail.com"><span>CONTACT ME</span></a></li>
+              <li><a href="#about"><span>ABOUT ME</span></a></li>
+            </ul>
+          </div>
+          <div class="line-separator"></div>
+            <div class="copyright">&copyMoritz Daniels, 2016
+            </div>
+            </div>
+            </div>
+          </footer>
   </body>
 </html>
