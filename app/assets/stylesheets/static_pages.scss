@@ -38,9 +38,13 @@ body {
 }
 
 .my-image {
-	display: block;
+	display: inline-block;
 	margin: auto;
 	vertical-align: middle;
+}
+
+.navbar-header {
+	display: inline-block;
 }
 
 /*footer*/
@@ -86,4 +90,13 @@ footer {
 table {
 	border: 1px solid black;
 	margin-top: 1em;
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 3em;
+	}
+	h2 {
+		font-size: 1.8em;
+	}
 }
