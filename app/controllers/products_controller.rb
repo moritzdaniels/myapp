@@ -61,6 +61,19 @@ class ProductsController < ApplicationController
     end
   end
 
+  def back
+    redirect_to :back
+  end
+
+  def index
+  if params[:q]
+    search_term = params[:q]
+    @products = Product.where("name LIKE ?", "%#{search_term}%")
+  else
+    @products = Product.all
+  end
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

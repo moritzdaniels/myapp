@@ -12,34 +12,49 @@
   <body>
   <div id="wrap">
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <%= image_tag("logo_md.png", class:"img-responsive logo-image", alt: "Brand") %>
-      </a>
-    </div>
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/#">
+          <%= image_tag("logo_md.png", class:"img-responsive logo-image", alt: "Brand") %>
+        </a>
+      </div>   
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="static_pages/about">About<span class="sr-only">(current)</span></a></li>
-        <li><a href="static_pages/contact">Contact</a></li>        
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produkte<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="products">Produkt 1</a></li>
-            <li><a href="products">Produkt 2</a></li>
-            <li><a href="products">Produkt 3</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="/static_pages/about">About<span class="sr-only">(current)</span></a>
+          </li>
+          <li>
+            <a href="/static_pages/contact">Contact</a>
+          </li>        
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produkte<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/products">Produkt 1</a></li>
+              <li><a href="/products">Produkt 2</a></li>
+              <li><a href="/products">Produkt 3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navbar-form navbar-right search" role="search">
+        <div class="form-group">
+        <%= form_tag("/products", method:"get") do %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search", class:"btn btn-default")%>
+        <% end %>
+        </div>
+      </div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div> 
   </nav>
-     
+    <% if notice %>
+      <%= notice %>
+    <% end %>
     <%= yield %>
   <footer>
   <div class="navbar-inverse navbar-fixed-bottom">
@@ -48,7 +63,8 @@
             <ul class="foot-text">
               <li><a href="#carousel-example-generic"><span>BACK TO TOP</span></a></li>
               <li><a href="mailto:moritzdaniels@gmail.com"><span>CONTACT ME</span></a></li>
-              <li><a href="#about"><span>ABOUT ME</span></a></li>
+              <li><a href="static_pages/about"><span>ABOUT</span></a></li>
+              <li><%= link_to "Product details", @product %></li>
             </ul>
           </div>
           <div class="line-separator"></div>

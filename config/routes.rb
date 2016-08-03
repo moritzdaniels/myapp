@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'subscribers/index'
+  resources :subscribers
+
   get 'static_pages/product'
 
   resources :products
@@ -7,7 +10,9 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
 
   get 'static_pages/index'
-  root 'static_pages#index'
+
+  get 'static_pages/landing_page'
+  root 'static_pages#landing_page'
 
   resources :orders, only: [:index, :show, :create, :destroy]
 

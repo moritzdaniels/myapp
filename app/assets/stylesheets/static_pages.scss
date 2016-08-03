@@ -4,6 +4,10 @@
 
 /*general*/
 
+a {
+	font-size: 1.2em;
+}
+
 h1 {
 	font-family: Arial;
 	font-size: 6em;
@@ -20,6 +24,7 @@ h2 {
 
 body {
 	margin-top: 7em;
+	margin-bottom: 7em;
 }
 
 .carousel-caption{
@@ -31,21 +36,33 @@ body {
 
 /*navigation*/
 
+.navbar-header {
+	float: left;
+}
+.navbar .navbar-nav {
+	margin: 5px;
+}
+
 .navbar-brand {
-	margin: 0;
 	height: 100%;
-	padding: 0.2em;
+}
+.collapse {
+	float: left;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+.search {
+	margin-top: 20px;
+	padding: 0;
+	margin-right: 10px;
 }
 
 .my-image {
 	display: inline-block;
-	margin: auto;
 	vertical-align: middle;
 }
 
-.navbar-header {
-	display: inline-block;
-}
 
 /*footer*/
 
@@ -92,11 +109,23 @@ table {
 	margin-top: 1em;
 }
 
+/* Subscribers */
+
+
+
+/* Media */
 @media (max-width: 480px) {
 	h1 {
 		font-size: 3em;
 	}
 	h2 {
 		font-size: 1.8em;
+	}
+	
+}
+@media (max-width: 767px) {
+	.search {
+		visibility: hidden;
+		display: inline-block;
 	}
 }
