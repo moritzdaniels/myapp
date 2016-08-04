@@ -13,15 +13,27 @@
 
   <div class="field">
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class:"form-control"%>
   </div>
 
   <div class="field">
     <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class:"form-control" %>
   </div>
 
+  <div class="field">
+    <%= f.label :password, "New password" %>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "off", class:"form-control" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirm new password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create user", class:"btn btn-default" %>
   </div>
 <% end %>
