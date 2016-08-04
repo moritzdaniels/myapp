@@ -35,6 +35,16 @@
             </ul>
           </li>
         </ul>
+        <ul class="nav navbar-nav pull-right">
+          
+          <% if user_signed_in? %>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+            <li><%= link_to('Edit', edit_user_registration_path) %></li>
+          <% else %>
+            <%= link_to('Login', new_user_path) %>
+          <% end %>
+          </li>
+        </ul>
       </div>
 
       <div class="navbar-form navbar-right search" role="search">
@@ -52,10 +62,12 @@
         </button>
     </div> 
   </nav>
-    <% if notice %>
-      <%= notice %>
-    <% end %>
-    <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% if notice %>
+  <%= notice %>
+  <% end %>
+  <%= yield %>
   <footer>
   <div class="navbar-inverse navbar-fixed-bottom">
         <div class="container foot">

@@ -34,13 +34,19 @@ body {
 	background-color: #1b1b1b;
 }
 
+.box {
+	background-color: grey;
+}
+.field {
+	margin-bottom: 0;
+}
 /*navigation*/
 
 .navbar-header {
 	float: left;
 }
 .navbar .navbar-nav {
-	margin: 5px;
+	margin: -5px;
 }
 
 .navbar-brand {
@@ -127,5 +133,11 @@ table {
 	.search {
 		visibility: hidden;
 		display: inline-block;
+	}
+}
+
+@media (min-width: 768px) {
+	.box {
+		width: 30%;
 	}
 }
