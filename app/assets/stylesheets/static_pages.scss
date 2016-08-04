@@ -8,6 +8,11 @@ a {
 	font-size: 1.2em;
 }
 
+p {
+	text-align: left;
+	margin-left: 0;
+}
+
 h1 {
 	font-family: Arial;
 	font-size: 6em;
@@ -17,9 +22,8 @@ h1 {
 }
 
 h2 {
-	text-align: center;
 	color: #1b1b1b;
-	margin-bottom: 1em;
+	margin-bottom: 0.5em;
 }
 
 body {
@@ -31,7 +35,6 @@ body {
 	font-size: 1em;
 	margin-bottom: -20px;
 	padding: 0px;
-	background-color: #1b1b1b;
 }
 
 .box {
@@ -39,6 +42,10 @@ body {
 }
 .field {
 	margin-bottom: 0;
+}
+
+.col-xs-6 {
+	padding: 0;
 }
 /*navigation*/
 
@@ -139,5 +146,8 @@ table {
 @media (min-width: 768px) {
 	.box {
 		width: 30%;
+	}
+	.proview {
+		width: 70%;
 	}
 }
