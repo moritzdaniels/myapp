@@ -21,17 +21,17 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-left">
           <li>
-            <a href="/static_pages/about">About<span class="sr-only">(current)</span></a>
+            <%= link_to "About", static_pages_about_path %>
           </li>
           <li>
-            <a href="/static_pages/contact">Contact</a>
+           <%= link_to "Contact", static_pages_contact_path %>
           </li>        
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produkte<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="/products">Produkt 1</a></li>
-              <li><a href="/products">Produkt 2</a></li>
-              <li><a href="/products">Produkt 3</a></li>
+              <li><%= link_to "Product 1", products_path %></li>
+              <li><%= link_to "Product 1", products_path %></li>
+              <li><%= link_to "Product 1", products_path %></li>
             </ul>
           </li>
         </ul>
@@ -61,10 +61,11 @@
         </button>
     </div> 
   </nav>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <% if notice %>
-  <%= notice %>
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p id="alert" class="alert alert-info"><%= alert %></p>
   <% end %>
   <%= yield %>
   <footer>
@@ -72,10 +73,9 @@
         <div class="container foot">
           <div>
             <ul class="foot-text">
-              <li><a href="#carousel-example-generic"><span>BACK TO TOP</span></a></li>
-              <li><a href="mailto:moritzdaniels@gmail.com"><span>CONTACT ME</span></a></li>
-              <li><a href="static_pages/about"><span>ABOUT</span></a></li>
-              <li><%= link_to "Product details", @product %></li>
+              <li><a href="#carousel-example-generic"><span>Back to top</span></a></li>
+              <li><a href="mailto:moritzdaniels@gmail.com"><span>Email me</span></a></li>
+              <li><%= link_to "About", static_pages_about_path %></li>
             </ul>
           </div>
           <div class="line-separator"></div>
