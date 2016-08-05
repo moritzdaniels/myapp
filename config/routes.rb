@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+  
+  resources :products do
+    resources :comments
+  end
   resources :users
+  
   get 'subscribers/index'
   resources :subscribers
 
@@ -20,5 +25,6 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show, :create, :destroy]
 
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
