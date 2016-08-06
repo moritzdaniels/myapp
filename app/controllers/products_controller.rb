@@ -4,9 +4,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    if params[:q]
+      search_term = params[:q]
+      @products = Product.where("name LIKE ?", "%#{search_term}%")
+    else
       @products = Product.all.paginate(:page => params[:page], :per_page => 3)
-  end
-  
+    end
+  end  
 
   # GET /products/1
   # GET /products/1.json
@@ -66,21 +70,6 @@ class ProductsController < ApplicationController
   def back
     redirect_to :back
   end
-
-  def index
-  if params[:q]
-    search_term = params[:q]
-    @products = Product.where("name LIKE ?", "%#{search_term}%")
-  else
-    @products = Product.all
-  end
-
-  # GET /products/1
-  # GET /products/1.json
-  def show
-    @comments = @product.comments.order("created_at DESC")
-  end
-end
 
   private
     # Use callbacks to share common setup or constraints between actions.
