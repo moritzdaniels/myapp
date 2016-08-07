@@ -16,9 +16,6 @@ p {
 h1 {
 	font-family: Arial;
 	font-size: 6em;
-	text-align: center;
-	color: #1b1b1b;
-	margin-top: 1em;
 }
 
 h2 {
@@ -27,8 +24,16 @@ h2 {
 }
 
 body {
-	margin-top: 7em;
-	margin-bottom: 7em;
+	margin: 0;
+}
+
+#top {
+	padding-top: 100px;
+	padding-left: 40px;
+	padding-bottom: 100px;
+	background-color: #dedede;
+	display: cover;
+	width: 100%;
 }
 
 .carousel-caption{
@@ -47,33 +52,13 @@ body {
 .col-xs-6 {
 	padding: 0;
 }
-/*navigation*/
 
-.navbar-header {
-	float: left;
-}
-.navbar .navbar-nav {
-	margin: -5px;
+.col-md-6 {
+	padding-bottom: 10px;
 }
 
-.navbar-brand {
-	height: 100%;
-}
-.collapse {
-	float: left;
-	margin-top: 7px;
-	margin-bottom: 7px;
-}
-
-.search {
-	margin-top: 20px;
-	padding: 0;
-	margin-right: 10px;
-}
-
-.my-image {
-	display: inline-block;
-	vertical-align: middle;
+.col-md-4 {
+	padding-bottom: 10px;
 }
 
 .form-control {
@@ -81,7 +66,41 @@ body {
 	width: 80%;
 }
 
+/*navigation*/
+.navbar-inner {
+	background: transparent;
+}
 
+.navbar-fixed-top {
+    min-height: 100px;
+}
+
+.navbar-nav > li > a {
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 80px;
+}
+
+.dropdown-menu {
+	background: transparent;
+}
+.search {
+	padding-top: 15px;
+    padding-bottom: 0px;
+}
+
+.navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
+    background: transparent;
+}
+
+.navbar .navbar-nav > li > a {
+	color: black;
+}
+
+.navbar-left:hover {
+	background: transparent;
+}
 /*footer*/
 
 .foot ul li {
@@ -120,17 +139,101 @@ footer {
 	clear: both;
 }
 
-/* Product */
+/* start page */
+
+#start {
+	padding-top: 450px;
+	background: url("hanseat_1.jpg");
+	background-size: cover;
+	min-height: 1000px;
+	width: 100%;
+	color: white;
+}
+
+#products {
+	min-height: 570px;
+}
+#products h2 {
+	text-align: center;
+}
+
+#products h1 {
+	text-align: center;
+	padding-top: 0.7em;
+	padding-bottom: 0.5em;
+}
+.image {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.bt2 {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 30%;
+	color: black;
+	outline: black solid 2px;
+}
+
+#inspiration {
+	min-height:900px;
+	background-color: #dedede;
+	background-size: cover;
+	width: 100%;
+}
+
+#inspiration h1 {
+	text-align: center;
+	padding-top: 0.7em;
+	padding-bottom: 0.5em;
+}
+#inspiration p {
+	text-align: center;
+	font-size: 2em;
+	line-height: 2em;
+	padding-right: 15%;
+	padding-left: 15%;
+}
+
+/* Product Page */
 
 table {
 	border: 1px solid black;
 	margin-top: 1em;
 }
 
+#overview {
+	margin-top: -50px;
+	padding-top: 130px;
+	padding-bottom:  20px;
+	background-color: #dedede;
+	width:100%;
+	display: cover;
+}
+
+#overview h1 {
+	text-align: center;
+	padding-bottom: 0.5em;
+}
 /* Subscribers */
 
+/* Buttons */
+
+.btn-normal {
+	background: 0 0;
+    border: 2px solid #f2f2f2;
+    border-radius: 0;
+    height: 40px;
+    line-height: 28px;
+    margin-top: 10px;
+}
 
 
+.btn-normal:hover {
+	background: transparent;
+}
 /* Media */
 @media (max-width: 480px) {
 	h1 {
