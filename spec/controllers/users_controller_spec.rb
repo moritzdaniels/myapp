@@ -2,9 +2,8 @@ require 'rails_helper'
 
 describe UsersController, :type => :controller do
   
-  let(:user) { User.create!(email: "moritz@example.net", password: "123456")}
-  let(:user2) { User.create!(email: "max@email.net", password: "123pass")}
-
+  let(:user) {FactoryGirl.create(:user)}
+  let(:user_2) {FactoryGirl.create(:user)}
   describe 'GET #show' do
 
     context 'User is logged in' do
@@ -17,7 +16,7 @@ describe UsersController, :type => :controller do
         get :show, id: user.id
         expect(response).to be_success
         expect(response).to have_http_status(200)
-        #expect(assigns(:user)).to eq user
+        expect(assigns(:user)).to eq user
         
       end
     end
@@ -34,7 +33,7 @@ describe UsersController, :type => :controller do
         sign_in user
       end
       it 'redirects to root' do
-        get :show, id: user2.id
+        get :show, id: user_2.id
         expect(response).to redirect_to(root_path)
         expect(response).to have_http_status(302)
         expect(assigns(:user)).not_to eq user           
@@ -43,7 +42,7 @@ describe UsersController, :type => :controller do
 
     context 'edit other user' do
       before do
-        sign_in user2
+        sign_in user_2
       end
       it 'redirects to root' do
         get :edit, id: user.id
