@@ -1,3 +1,4 @@
+<div class="container" id="userr">
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -42,3 +43,4 @@
     <%= f.submit "Create user", class:"btn btn-default" %>
   </div>
 <% end %>
+</div>
