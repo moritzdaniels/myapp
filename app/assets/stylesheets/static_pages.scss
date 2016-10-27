@@ -261,6 +261,14 @@ table {
 .btn-normal:hover {
 	background: transparent;
 }
+
+/* Notice */
+
+.alert {
+	margin-top: 100px;
+	margin-right: -33px;
+	margin-bottom: 0px;
+} 
 /* Media */
 @media (max-width: 480px) {
 	h1 {
