@@ -9,7 +9,7 @@ default from: "moritzdaniels@gmail.com"
   end
 
   def welcome(user)
-  @appname = "Bike Shop"
+  @appname = "Hanseat Shop"
   mail( :to => user.email,
         :subject => "Welcome to #{@appname}!")
   end
