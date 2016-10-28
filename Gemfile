@@ -42,6 +42,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  gem 'byebug'
 end
 
 group :production do
