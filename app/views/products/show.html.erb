@@ -1,20 +1,21 @@
 <div class="container" id="top">
 <p id="notice"><%= notice %></p>
   <div class="row">
-    <h2>
-        <%= @product.name %>
-      </h2>
-    <div class="col-md-4">
-      <p>
-        <%= image_tag(@product.image_url, class: "img-responsive img-zoom", width: "370", data_zoom_image: @product.image_url) if @product.image_url%>
-      </p>
-    </div>
-    <div class="col-xs-6 description">
-      <p>
-        <strong>Description:</strong><br />
-        <%= @product.description %>
-      </p>
-
+    <% cache @product do %>
+      <h2>
+          <%= @product.name %>
+        </h2>
+      <div class="col-md-4">
+        <p>
+          <%= image_tag(@product.image_url, class: "img-responsive img-zoom", width: "370", data_zoom_image: @product.image_url) if @product.image_url%>
+        </p>
+      </div>
+      <div class="col-xs-6 description">
+        <p>
+          <strong>Description:</strong><br />
+          <%= @product.description %>
+        </p>
+    <% end %>    
       <p>
         <strong>Colour:</strong>
         <%= @product.colour %><br />
