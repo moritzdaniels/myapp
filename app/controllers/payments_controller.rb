@@ -13,9 +13,9 @@ class PaymentsController < ApplicationController
 	    )
 	    	if charge.paid
 	    	Order.create(
-	    		:product_id @product,
-	    		:user_id @user,
-	    		:total @product.price
+	    		product_id: @product_id,
+	    		user_id: @user_id,
+	    		total: @product.price
   			)
   			end
 	  	rescue Stripe::CardError => e
