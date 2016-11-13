@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   		product = @comment.product
   		@comment.destroy
   		redirect_to product
-	end
+    end
 
   private
 
